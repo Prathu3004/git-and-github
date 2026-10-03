@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple, clean, and interactive Simple Interest Calculator web application. Calculate simple interest and total amount quickly and accurately.">
+    <title>Simple Interest Calculator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-decor">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="app-header">
+            <div class="icon-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h1>Simple Interest Calculator</h1>
+            <p class="subtitle">Calculate your interest and total amount easily</p>
+        </header>
+
+        <section class="calculator-card">
+            <!-- Error Alert Box -->
+            <div id="errorMessage" class="error-box hidden" role="alert"></div>
+
+            <form id="calculatorForm" novalidate>
+                <!-- Principal Input -->
+                <div class="input-group">
+                    <label for="principal">Principal Amount (₹)</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">₹</span>
+                        <input type="number" id="principal" min="0.01" step="any" placeholder="e.g. 10000" required autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Rate Input -->
+                <div class="input-group">
+                    <label for="rate">Rate of Interest (% per year)</label>
+                    <div class="input-wrapper">
+                        <span class="unit-symbol">%</span>
+                        <input type="number" id="rate" min="0.01" step="any" placeholder="e.g. 5" required autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Time Input -->
+                <div class="input-group">
+                    <label for="time">Time (in Years)</label>
+                    <div class="input-wrapper">
+                        <span class="unit-symbol">Yr</span>
+                        <input type="number" id="time" min="0.01" step="any" placeholder="e.g. 2" required autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button type="submit" id="calculateBtn" class="btn btn-primary">
+                        <span>Calculate</span>
+                    </button>
+                    <button type="button" id="resetBtn" class="btn btn-secondary">
+                        <span>Reset</span>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Calculation Results Section -->
+            <div id="resultsCard" class="results-container hidden">
+                <div class="result-box interest-box">
+                    <span class="result-label">Simple Interest</span>
+                    <span id="interestResult" class="result-value">₹0.00</span>
+                </div>
+                <div class="result-box total-box">
+                    <span class="result-label">Total Amount</span>
+                    <span id="totalResult" class="result-value">₹0.00</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="app-footer">
+            <p>Created by <strong>Prathmesh Jadhav</strong></p>
+        </footer>
+    </main>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
